@@ -28,8 +28,8 @@ containers.forEach((element) => {
 
 indDivs.forEach((element) => {
     element.classList.add("Grid");
-    element.style.border = "5px solid white";
+    element.style.border = "3px solid white";
     element.textContent = "Here I am";
     element.style.flexGrow = "1";
-    element.style.color = "white";
+    // element.style.color = "white";
 });

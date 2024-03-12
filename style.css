@@ -1,0 +1,7 @@
+div div {
+    color: white;
+}
+
+div div:hover {
+    background-color: blue;
+}
