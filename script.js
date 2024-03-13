@@ -47,7 +47,7 @@ function configureDivs() {
         element.style.border = "3px solid white";
         element.style.flexGrow = "1";
         element.addEventListener("mouseover", () => {
-        element.style.backgroundColor = `rgba(${getRGBColor()}, ${getRGBColor()}, ${getRGBColor()}, ${opacityIncreaser()}`;
+        element.style.backgroundColor = `rgba(${getRGBColor()}, ${getRGBColor()}, ${getRGBColor()}, ${opacityIncreaser()})`;
         })
     });
 }
@@ -59,9 +59,8 @@ button.addEventListener("click", () => {
         alert("Error.  You provided a number greater than 100.");
         promptUser();
     }
-    containers.forEach((element) => element.remove())
-    console.log("containerInput ", containerInput)
-    console.log("divInput ", divInput)
+    containers.forEach((element) => element.remove());
+    opacity = .1;
     createGrid();
     configureContainers();
     configureDivs();
