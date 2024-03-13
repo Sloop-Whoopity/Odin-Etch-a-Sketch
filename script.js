@@ -73,9 +73,7 @@ function getRGBColor() {
 }
 
 function opacityIncreaser() {
-    console.log("Opacity ", opacity);
     opacity += .1;
-    console.log("Opacity ", opacity);
     if (opacity >= 1) {opacity = 1};
     return opacity;
 } 
