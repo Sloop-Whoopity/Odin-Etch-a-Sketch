@@ -7,6 +7,7 @@ let containerInput = 16;
 let divInput = 16;
 let containers;
 let indDivs; 
+let opacity = .1
 createGrid()
 configureContainers()
 configureDivs()
@@ -34,7 +35,7 @@ function configureContainers() {
     containers.forEach((element) => {
         element.style.display = "flex";
         element.style.flexGrow = "1";
-        element.style.backgroundColor = "red";
+        element.style.backgroundColor = "white";
         element.classList.add("divContainer");
     })
 }
@@ -46,7 +47,7 @@ function configureDivs() {
         element.style.border = "3px solid white";
         element.style.flexGrow = "1";
         element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = `rgba(${getRGBColor()}, ${getRGBColor()}, ${getRGBColor()}, 1)`;
+        element.style.backgroundColor = `rgba(${getRGBColor()}, ${getRGBColor()}, ${getRGBColor()}, ${opacityIncreaser()}`;
         })
     });
 }
@@ -71,6 +72,14 @@ function getRGBColor() {
 // down to 255, which is the highest rgb value available. 
     return rgbColor;
 }
+
+function opacityIncreaser() {
+    console.log("Opacity ", opacity);
+    opacity += .1;
+    console.log("Opacity ", opacity);
+    if (opacity >= 1) {opacity = 1};
+    return opacity;
+} 
 
 function promptUser() {
     containerInput = +prompt("Please provide the number of vertical squares up to 100.", "");
