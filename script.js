@@ -6,7 +6,7 @@ let button = document.querySelector("button");
 let containerInput = 16;
 let divInput = 16;
 let containers;
-let indDivs;
+let indDivs; 
 createGrid()
 configureContainers()
 configureDivs()
@@ -46,9 +46,8 @@ function configureDivs() {
         element.style.border = "3px solid white";
         element.style.flexGrow = "1";
         element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = "blue";
+            element.style.backgroundColor = `rgba(${getRGBColor()}, ${getRGBColor()}, ${getRGBColor()}, 1)`;
         })
-        // element.style.color = "white";
     });
 }
 
@@ -67,7 +66,11 @@ button.addEventListener("click", () => {
     configureDivs();
 })
 
-
+function getRGBColor() {
+    let rgbColor = Math.floor(Math.random() * 258) //258 multiplied by .99 gives us a number that can be rounded 
+// down to 255, which is the highest rgb value available. 
+    return rgbColor;
+}
 
 function promptUser() {
     containerInput = +prompt("Please provide the number of vertical squares up to 100.", "");
